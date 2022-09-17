@@ -3,11 +3,10 @@ Console.Write("Read number, please: ");
 int N = Convert.ToInt32(Console.ReadLine());  // Ввод числа
 int i=0;                                       // Инициализация переменной
 
-while (i<=N) // добавил меньше или равно
+while (i<=N)
 {
     if(i % 2 == 0) Console.Write(i + ", ");
     i ++;
 }
-Console.Write("\b"+"\b"); // ооооо заебок)
-
+Console.Write("\b"+"\b");
 Console.Write("."+ "\n"); //точка и новая строка
