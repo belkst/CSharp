@@ -8,5 +8,5 @@ while (i<=N)
     if(i % 2 == 0) Console.Write(i + ", ");
     i ++;
 }
-Console.Write("\b"+"\b");
+Console.Write("\b"+"\b"); //удалил пробел и последнюю запятую
 Console.Write("."+ "\n"); //точка и новая строка
