@@ -30,22 +30,20 @@ internal class Program
             return revNum; // возвращаем перевернутое личсло
         }
 
-        void compareNumbers(int palNumber, int revNum)
+        void compareNumbers(int palNumber, int revNum) //проверяем на палиндром
         {
             if (palNumber == revNum)
             {
-                Console.WriteLine("Полученное число является палиндромом!");
+                Console.WriteLine("Данное число является палиндромом!");
                 Console.WriteLine();
             }
-            else Console.WriteLine("Полученное число НЕ является палиндромом!");
+            else Console.WriteLine("Данное число НЕ является палиндромом!");
             Console.WriteLine();
         }
 
 
-        // int checkPal();
-
         Console.WriteLine("Исходное число:     " + palNumber); // выводим в консоль исходное число
-        Console.WriteLine("Перевернутое число: " + reverseNumber(palNumber)); // выводим в консоль перевернутое число
+        // Console.WriteLine("Перевернутое число: " + reverseNumber(palNumber)); // выводим в консоль перевернутое число
 
 
         compareNumbers(palNumber, reverseNumber(palNumber)); //выводим в консоль результат сравнения
