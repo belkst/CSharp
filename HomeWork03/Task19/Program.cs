@@ -1,48 +1,53 @@
-﻿// // Задача 19
-// // Напишите метод, который принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
-// // 14212 -> нет
-// // 12821 -> да
-// // 23432 -> да
+internal class Program
+{
+    private const string Value = "Палиндром не может состоять из однозначного или отрицательного числа, введите минимум двузначное положительное число";
+    private const string Value1 = "Напишите число, которое мы будем проверять по палиндром: ";
 
-// // - получить на вход число, сохранить его в переменной
-// // - написать метод, который проверяет может ли число потенциально являться палиндромом (больше 9)
-// // - написать метод, переворачивающий число
-// // - написать метод, проверяющий на палиндром
-// // - написать метод, выводящий на печать
+    private static void Main(string[] args)
+    {
+        Console.Clear();
+                    
+            Console.Write(Value1);
+            int palNumber = 0;
+            palNumber = Convert.ToInt32(Console.ReadLine());  // Ввод числа
+            
+            while (palNumber <= 9)
+            {
+                Console.WriteLine(Value);
+                Console.WriteLine();
+                Console.Write(Value1);
+                palNumber = Convert.ToInt32(Console.ReadLine());  // Ввод числа
+            }
+        
+        int reverseNumber(int x) //создаем метод, разворачивающий число, х - принимаемое из вне значение
+        {
+            int revNum = 0; //задаем переменную для развернутого числа
+            while (x > 0)   // цикл с логикой переворачивания, пока х не достигнет 0 он будет выполняться
+            {
+                revNum = revNum * 10 + x % 10;
+                x = x / 10;
+            }
+            return revNum; // возвращаем перевернутое личсло
+        }
 
-// int palNumber = 14212;
-// int revNum = 0;
+        void compareNumbers(int palNumber, int revNum)
+        {
+            if (palNumber == revNum)
+            {
+                Console.WriteLine("Полученное число является палиндромом!");
+                Console.WriteLine();
+            }
+            else Console.WriteLine("Полученное число НЕ является палиндромом!");
+            Console.WriteLine();
+        }
 
-// // - написать метод, который проверяет может ли число потенциально являться палиндромом (больше 9)
-// // void checkPal (int palNumber)
-// //     {
-// //     if(palNumber<9) Console.WriteLine ("Палиндром не может состоять из однозначного числа, введите минимум двузначное число"); break;
-// //     }
 
-// // - написать метод, переворачивающий число
-// int reverseNumber(int palNumber)
-//     {
-//     if (palNumber<=1)
-//         {
-//         revNum = revNum * 10 + palNumber % 10;
-//         palNumber = palNumber / 10;
-//         }
-//         return revNum;    
-//     }
-    
-// Console.WriteLine(reverseNumber);
+        // int checkPal();
 
-// // // - написать метод, проверяющий на палиндром
-// // void comparePal(int palNumber, int revNum)
-    
-    
-// //     {
-// //     int result = 0;
-// //     if (palNumber == revNum) result = ("Число " + palNumber+ " является палиндромом");
-// //     else result = ("Число " + palNumber+ " НЕ является палиндромом");
-// //     }
-    
-// // void print (int comparePal)
-// //     {
-// //        Console.WriteLine(comparePal);
-// //     }
+        Console.WriteLine("Исходное число:     " + palNumber); // выводим в консоль исходное число
+        Console.WriteLine("Перевернутое число: " + reverseNumber(palNumber)); // выводим в консоль перевернутое число
+
+
+        compareNumbers(palNumber, reverseNumber(palNumber)); //выводим в консоль результат сравнения
+    }
+}
