@@ -26,8 +26,7 @@ int[] expArray(int numLen)//создали метод, который запол
     int[] exp = new int[numLen];
     for (int i = 0; i < numLen; i++)
     {
-        exp[i] = exp[i]*exp[i]*exp[i];
-        Console.WriteLine("Вывод инфы о индексе "+exp[i]);
+        exp[i] = (i+1)*(i+1)*(i+1);
     }
     return exp;
 }
@@ -38,14 +37,14 @@ void print(int lengthMassive, int[] resMassive)
     Console.WriteLine("Таблица кубов от 1 до " + lengthMassive);
     for (int j = 0; j < lengthMassive; j++)
     {
-        Console.WriteLine(resMassive[j]);
+        Console.WriteLine("Куб числа "+(j+1)+" = "+ resMassive[j]);
     }
 }
 
 
 
 int lengthMassive = numLen();//присвоили переменную длине массива
-Console.WriteLine($"Вы ввели значение {lengthMassive}, которое является длиной массива");//вывели надпись длины массива
+Console.WriteLine($"Вы ввели значение {lengthMassive}, которое является длиной массива\n");//вывели надпись длины массива
 
 int[] resMassive = expArray(lengthMassive);//в методе создали массив, произвели рассчеты и передали их массиву resMassive
 
