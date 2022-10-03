@@ -49,7 +49,7 @@ for (int y = 0; y < 4; y++)
 }
 
 int zice = resMassive.Length;
-int mHo = resMassive.Max();// задаем максимальное значение людей в магазине
+int mHo = resMassive.Max();// присваиваем переменной максимальное значение людей в магазине
 
 for (int z = 0; z < zice; z++)
 {
