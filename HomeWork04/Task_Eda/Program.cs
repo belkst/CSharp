@@ -43,8 +43,7 @@ for (int y = 0; y < 4; y++)
     int b = arr[y, 1];
     for (int i = a; i <= b; i++)
     {
-        resMassive[a]++;
-        a++;
+        resMassive[i]++;
     }
 }
 
