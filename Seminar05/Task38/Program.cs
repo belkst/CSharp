@@ -28,11 +28,10 @@ int sizeArray()//метод запрашивает и возвращает ко�
 int[] fillArray(int size) //заполняем массив случайными числами
 {
     int[] array = new int[size];
-    Random rand = new Random();
     for (int i = 0; i < size; i++)
     {
         Console.ForegroundColor = ConsoleColor.Green;  
-        array[i] = rand.Next(0, 9999);
+        array[i] = new Random().Next(0, 9999);
         Console.WriteLine($"Элемент массива {i} = {array[i]}");
         Console.ResetColor();
     }

@@ -35,10 +35,9 @@ int sizeMassive()//метод запрашивает и возвращает к�
 int[] inRandMassive(int size) //заполняем массив случайными числами
 {
     int[] exMassive = new int[size];
-    Random rand = new Random();
     for (int i = 0; i < size; i++)
     {
-        exMassive[i] = rand.Next(0, 9999);
+        exMassive[i] = new Random().Next(0, 9999);
         if (i % 2 == 0)
         {
             Console.ForegroundColor = ConsoleColor.Red;
@@ -76,5 +75,6 @@ Console.WriteLine();
 Console.WriteLine($"Сумма элементов массива на нечетных позициях равна: {sum}\n");
 Console.WriteLine("======================================");
 Console.ForegroundColor = ConsoleColor.Red;
-Console.Write("Нечетные"); Console.ResetColor(); Console.WriteLine(" позиции в массиве - это позиции с четной индексацией, и наоборот.");
+Console.Write("Нечетные"); Console.ResetColor();
+Console.WriteLine(" позиции в массиве - это позиции с четной индексацией, и наоборот.");
 Console.WriteLine("======================================\n");
