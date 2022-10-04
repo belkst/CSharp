@@ -14,7 +14,7 @@ Console.Clear();
 
 int sizeMassive()//метод запрашивает и возвращает количество элементов массива, число больше 0
 {
-    Console.Write("Напишите количество элементов массива: ");
+    Console.Write("Введите количество элементов массива: ");
     int sizeMass = Convert.ToInt32(Console.ReadLine());
     while (sizeMass < 0)
     {
