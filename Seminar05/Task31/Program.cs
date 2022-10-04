@@ -4,10 +4,10 @@
 // ===
 // 1 создать массив из 12 элементов
 // 2 заполнить случайными числами
-// печать
 // найти сумму положительных
 // найти сумму отрицательных
 // найти их сумму
+// результаты в консоль
 
 
 
@@ -49,7 +49,8 @@ int SumN(int[] sn)
     return suN;
 }
 
-Console.WriteLine("Создан массив из 12 элементов");
+Console.WriteLine("Создан массив из 12 элементов:");
 Console.WriteLine(string.Join(", ", FillArray()));
-Console.WriteLine($"сумма положительных чисел = {SumP(FillArray())}");
-Console.WriteLine($"сумма отрицательных чисел = {SumN(FillArray())}\n");
+Console.WriteLine();
+Console.WriteLine($"Cумма положительных чисел = {SumP(FillArray())}");
+Console.WriteLine($"Cумма отрицательных чисел = {SumN(FillArray())}\n");
