@@ -8,10 +8,7 @@ void printArray(int[,] matr)
         for (int j = 0; j < matr.GetLength(1); j++)
         {
             Console.Write($" {matr[i, j]} ");
-
-
         }
-        //    Console.ReadLine();
         Console.WriteLine();
     }
 }
