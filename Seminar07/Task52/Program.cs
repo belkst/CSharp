@@ -27,7 +27,6 @@ for (int j = 0; j < Array.GetLength(0); j++)
     for (int i = 0; i < Array.GetLength(1); i++)
     {
         Result = Result + Array[i,j];
-       //System.Console.Write(Result+" ");
     }
 
     ArrResult[j] = Result/Array.GetLength(1); 
