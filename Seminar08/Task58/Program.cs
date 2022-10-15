@@ -55,3 +55,11 @@ for (int j = 0; j < a.GetLength(0); j++)
 
 }
 
+for (i = 0; i < b.GetLength(1); i++)
+{
+    for (j = 0; j < a.GetLength(0); j++)
+    {
+        Console.Write(c[i, j] + "\t");
+    }
+    Console.WriteLine();
+}
