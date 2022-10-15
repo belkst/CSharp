@@ -7,59 +7,72 @@
 Результирующая матрица будет:
 18 20
 15 18
-
-- задать матрицу a
-- задать матрицу b
-- сравнить матрицы на возможность перемножения, длина строки 1 = длине столбца 2
-- заполнение матрицы c:
 */
+
+Console.Clear();
+Console.WriteLine("============================");
 
 int[,] a = new int[,]
 {
-    {1,2},
-    {3,4},
-    {5,6}
+    {2,4},
+    {3,2}
 };
 int[,] b = new int[,]
 {
-    {1,2,3},
-    {4,5,6}
+    {3,4},
+    {3,3}
 };
 
 int[,] c = new int[a.GetLength(0), b.GetLength(1)];
+System.Console.WriteLine(a.GetLength(1) + " столбцов в А массиве");
+System.Console.WriteLine(b.GetLength(0) + " строк в В массиве");
 
-
-//   I J  =  a[i,k] *   b [k,j]
-//   I J  =  a[i,k] *   b [k,j]
-// c 0,0  =  a 0,0   *   b 0,0+         c 0,1  =  a 0,0   *   b 0,1+        c 0,2  =  a 0,0   *   b 0,2+
-//           a 0,1   *   b 1,0                    a 0,1   *   b 1,1                   a 0,1   *   b 1,2
-
-// c 1,0  =  a 1,0   *   b 0,0+         c 1,1  =  a 1,0   *   b 0,1+        c 1,2  =  a 1,0   *   b 0,2+
-//           a 1,1   *   b 1,0                    a 1,1   *   b 1,1                   a 1,1   *   b 1,2
-
-// c 2,0  =  a 2,0   *   b 0,0+         c 2,1  =  a 2,0   *   b 0,1+        c 2,2  =  a 2,0   *   b 0,2+
-//           a 2,1   *   b 1,0                    a 2,1   *   b 1,1                   a 2,1   *   b 1,2
-
-for (int j = 0; j < a.GetLength(0); j++)
+for (int i = 0; i < a.GetLength(0); i++)
 {
-    for (int i = 0; i < b.GetLength(1); i++)
+    for (int j = 0; j < b.GetLength(1); j++)
     {
-        c[i, j] = 0;
         for (int k = 0; k < a.GetLength(1); k++)
         {
-            c[i, j] = c[i, j] + a[i, k] * b[k, j];
-
+            c[i, j] += a[i, k] * b[k, j]; // c[i,j] += a[i, k] * b[k,j]
         }
-
     }
-
 }
 
-for (i = 0; i < b.GetLength(1); i++)
+Console.WriteLine("Матрица А");
+Console.WriteLine("---------");
+for (int i = 0; i < a.GetLength(0); i++)
 {
-    for (j = 0; j < a.GetLength(0); j++)
+    for (int j = 0; j < a.GetLength(1); j++)
+    {
+        Console.Write(a[i, j] + "\t");
+    }
+    Console.WriteLine();
+}
+Console.WriteLine();
+Console.WriteLine("Матрица B");
+Console.WriteLine("---------");
+
+for (int i = 0; i < b.GetLength(0); i++)
+{
+    for (int j = 0; j < b.GetLength(1); j++)
+    {
+        Console.Write(b[i, j] + "\t");
+    }
+    Console.WriteLine();
+}
+Console.WriteLine();
+
+
+System.Console.WriteLine("Результат перемножения матриц А и В");
+System.Console.WriteLine("Матрица С");
+System.Console.WriteLine("---------");
+
+for (int i = 0; i < a.GetLength(0); i++)
+{
+    for (int j = 0; j < b.GetLength(1); j++)
     {
         Console.Write(c[i, j] + "\t");
     }
     Console.WriteLine();
 }
+Console.WriteLine("\n");
