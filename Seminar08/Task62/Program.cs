@@ -15,57 +15,56 @@
 кождый шаг вперед необходимо проверять ==0 тогда можно записывать
 */
 
+Console.Clear();
 int[,] spiralArray = new int[4, 4];
 int fill = 1;
-// int offset = 0;//вместо i- оффсет. да и оффсет <= GetLength(0)/2
-for (int offset = 0; offset <= spiralArray.GetLength(0)/2; offset++)//тут?
+for (int offset = 0; offset <= spiralArray.GetLength(0) / 2; offset++)
 {
-    for (int j = offset; j < spiralArray.GetLength(1) - offset; j++) //вот тут прошел все элементы первой строки
+    for (int j = offset; j < spiralArray.GetLength(1) - offset; j++)
     {
-        int i = offset;//нам с первой строки надо начинать потому что
+        int i = offset;
         if (spiralArray[i, j] == 0)
         {
             spiralArray[i, j] = fill;
             fill++;
         }
     }
-    for (int i = offset+1; i < spiralArray.GetLength(0) - offset; i++)
+    for (int i = offset + 1; i < spiralArray.GetLength(0) - offset; i++)
     {
-        int j = spiralArray.GetLength(1) - offset-1;// лучше не i менять, а в самом элементе
+        int j = spiralArray.GetLength(1) - offset - 1;
         if (spiralArray[i, j] == 0)
         {
             spiralArray[i, j] = fill;
             fill++;
         }
     }
-    for (int j = spiralArray.GetLength(1) - offset-1; j >= offset; j--)
+    for (int j = spiralArray.GetLength(1) - offset - 1; j >= offset; j--)
     {
-       
-        if (spiralArray[spiralArray.GetLength(1) - offset -1, j] == 0)//вот тут вообще
-        
+        if (spiralArray[spiralArray.GetLength(1) - offset - 1, j] == 0)
         {
-            spiralArray[spiralArray.GetLength(1) - offset -1, j] = fill;// и тут
+            spiralArray[spiralArray.GetLength(1) - offset - 1, j] = fill;
             fill++;
         }
-    } 
-    for (int i = spiralArray.GetLength(0) - offset-1; i > offset; i--)
+    }
+    for (int i = spiralArray.GetLength(0) - offset - 1; i > offset; i--)
     {
-        //int j = spiralArray.GetLength(1) - offset-1; //и тут тоже так же?
-
-        if (spiralArray[i, offset] == 0)// выше о убрать)
+        if (spiralArray[i, offset] == 0)
         {
-            spiralArray[i, offset] = fill; 
+            spiralArray[i, offset] = fill;
             fill++;
         }
     }
 }
 
-//печать улитки
+//print spiral
 for (int i = 0; i < spiralArray.GetLength(0); i++)
 {
     for (int j = 0; j < spiralArray.GetLength(1); j++)
     {
         Console.Write(spiralArray[i, j] + "  ");
     }
-    Console.WriteLine();
+    Console.WriteLine("\b");
+
 }
+
+    Console.WriteLine("\b");
