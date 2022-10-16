@@ -64,7 +64,6 @@ for (int i = 0; i < spiralArray.GetLength(0); i++)
         Console.Write(spiralArray[i, j] + "  ");
     }
     Console.WriteLine("\b");
-
 }
 
-    Console.WriteLine("\b");
+Console.WriteLine("\b");
